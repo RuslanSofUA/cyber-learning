@@ -1,0 +1,37 @@
+## 📖 What I Learned Today
+
+### 🔎 Nmap
+- Learned how to scan all ports (`-sV -p-`).
+- Understood how to detect running services and OS.
+- Practiced service enumeration → only SSH (22/tcp, OpenSSH 10.0p2 Debian 5).
+
+### 🔑 SSH Algorithms
+- Learned about strong vs weak encryption algorithms.
+- Identified modern ones: curve25519, chacha20, aes-gcm.
+- Found legacy one: hmac-sha1 (should be disabled).
+
+### 🛡 Vulnerability Scanning
+- Used Nmap `--script vuln` to check for CVEs.
+- Confirmed: no critical vulnerabilities on SSH.
+
+### 🐍 Brute Force
+- Tried Nmap `ssh-brute` → 109 attempts, no creds.
+- Used Hydra with `rockyou.txt`:
+  - First attempt (8 threads) → errors (too many connections).
+  - Adjusted to slow reliable mode (`-t 1 -W 10`).
+  - Stopped manually at ~650 attempts → no creds yet.
+- Learned how to pause/resume Hydra with `-I`.
+
+---
+
+## ✅ Summary
+- Learned basics of scanning, enumeration, vuln checks, brute force.  
+- Understood importance of tuning Hydra (fast vs reliable).  
+- Documented everything in structured reports.  
+
+---
+
+## 🔮 Next Steps
+- Resume Hydra brute force later.  
+- Explore HTTP enumeration and SQLi basics.  
+- Continue documenting progress daily in `week1/`.  
