@@ -1,0 +1,16 @@
+📝 Notes — Day 1
+
+- Learned to scan ports and detect services with **Nmap** (`-sV -p-`).  
+- Found only one open port → `22/tcp SSH (OpenSSH 10.0p2 Debian 5)`.  
+- Used `ssh2-enum-algos` → saw strong algorithms and weak `hmac-sha1`.  
+- Checked vulnerabilities with `--script vuln` → no critical CVEs.  
+- Tried brute force with `ssh-brute` → no weak passwords.  
+- Used **Hydra** with `rockyou.txt`:  
+  - First attempt with 8 threads failed (too many connections).  
+  - Switched to slow reliable mode (`-t 1 -W 10`).  
+  - Stopped at ~650 attempts → no credentials yet.  
+- Understood difference between fast and slow Hydra modes.  
+- Prepared GitHub project with reports, theory, and summary table.  
+
+---
+✅ **Main takeaway**: Learned full workflow — scanning, enumeration, vuln check, brute force. 
